@@ -1,3 +1,4 @@
+![interface model_eval_interface.drawio](./imgs/model_eval_interface.drawio.png)
 # step_template
 
 Prerequisites

@@ -2,23 +2,33 @@
     "pipeline_params":
     {
         "env_name":"user",
-        "pipeline_name":"pipeline",
-        "zone_name":"zone",
-        "X": "something"
+        "pipeline_name":"yolox_mmdet",
+        "zone_name":"test"
     },
     "step_params":
     {
-        "Y": "something_else",
-        "step_name": "step_template"
+        "step_name": "4_model_eval"
     },
     "substeps_params":
     [
         {
-            "substep_name":"substep_full.ipynb",
+            "substep_name":"0_configure_eval.ipynb",
             "substep_params":
             {
-                "param1":"None1",
-                "param2":"None2"
+            }
+        },
+        {
+            "substep_name":"1_eval.ipynb",
+            "substep_params":
+            {                
+                "min_score"      : 0.05
+            }
+        },
+        {
+            "substep_name":"2_compare_eval.ipynb",
+            "substep_params":
+            {
+                "threshold_iou" : 0.5
             }
         }
     ]
