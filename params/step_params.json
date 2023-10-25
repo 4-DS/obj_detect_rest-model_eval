@@ -7,7 +7,7 @@
     },
     "step_params":
     {
-        "step_name": "4_model_eval"
+        "step_name": "model_eval"
     },
     "substeps_params":
     [
