@@ -1,31 +1,45 @@
 ![interface model_eval_interface.drawio](./imgs/model_eval_interface.drawio.png)
-# step_template
 
-Prerequisites
+# Step CV-Pipeline: model_eval [RU](README_RU.md)
 
-- Sinara is successfully deployed as said in https://github.com/4-DS/sinara-ext-tools.git
+Task:
+- Processing the test dataset.
 
-# Step repository naming conventions
+This step CV-Pipeline: model_eval is intended for:
+Testing the model, building metrics and graphs. If this is an improvement stage, then pull up the previous predictors and plot them on a graph (so that you have something to compare with). There can be several test sets - be sure to indicate what kind of test split is in the parameters. For detectors, the construction of a Precision-Recall curve is mandatory (code). Metrics should be described as being counted. For classification: visualization of several examples with the greatest error, sorted in descending order of error. For detectors it is mandatory: FP - red, FN - blue, GT - green. Add viewing parameters to the parameters (number of examples, type of error, etc.).
 
-We will recommend forming the git repo name as: <%pipeline_name>-<%step_name>
+Created based on [template](https://github.com/4-DS/step_template).
+In order not to forget about the required cells in each laptop, the easiest way to create new jupyter notebooks is simply by copying [`substep_full.ipynb`](https://github.com/4-DS/step_template/blob/main/substep_full.ipynb) from standard [template](https://github.com/4-DS/step_template).
 
-But this is not a mandatory requirement. And our library should work under any layouts with naming
+Input data for step CV-Pipeline: model_eval
+- **test_data**     
+Test image dataset saved in parquets (from the CV-Pipeline component: data_prep)
 
-The authoritative source of the pipeline and step names will now be exclusively in configs, and will not be tightly tied to the names of folders and git repositories
+- **test_config**     
+Annotations and test image dataset (from the CV-Pipeline component: data_prep)
 
+- **bento_service**     
+bento_service, packaged model service via BentoML (from CV-Pipeline component: model_pack)
 
-Make the following to create your Sinara step:
+## How to run a step CV-Pipeline: model_eval
 
-1. Create empty git repo with https://github.com/<%organization_name>/<%pipeline_name>-<%step_name>.git 
-2. Clone the dsml component template repository
-- cd work
-- git clone --recurse-submodules https://github.com/4-DS/step_template.git {my_step}
-3. Change dsml component remote origin
-- cd {my_step}
-- git remote set-url origin https://github.com/<%organization_name>/<%pipeline_name>-<%step_name>.git
-4. Squash dsml component template commits
-- cd {my_step}
-- git reset $(git commit-tree HEAD^{tree} -m "a new Sinara step")
-5. Push dsml component template to new origin
-- git push
-6. See the examples for details: https://github.com/4-DS/sinara-ext-tools.git
+### Create a directory for the project (or use an existing one)
+```
+mkdir yolox_mmdet
+cd yolox_mmdet
+```  
+
+### clone the repository: model_eval
+```
+git clone --recurse-submodules https://gitlab.com/yolox_mmdet/model_eval.git {dir name for model_eval}
+cd model_eval
+```  
+
+### run step CV-Pipeline:model_eval
+```
+python step.dev.py
+```  
+or
+```
+step.prod.py
+``` 
