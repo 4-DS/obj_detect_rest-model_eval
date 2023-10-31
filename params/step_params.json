@@ -28,7 +28,8 @@
             "substep_name":"compare_eval.ipynb",
             "substep_params":
             {
-                "threshold_iou" : 0.5
+                "threshold_iou" : 0.5,
+                "threshold_MAp05": 0.5
             }
         }
     ]
