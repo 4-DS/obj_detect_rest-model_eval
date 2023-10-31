@@ -12,20 +12,20 @@
     "substeps_params":
     [
         {
-            "substep_name":"0_configure_eval.ipynb",
+            "substep_name":"configure_eval.ipynb",
             "substep_params":
             {
             }
         },
         {
-            "substep_name":"1_eval.ipynb",
+            "substep_name":"eval.ipynb",
             "substep_params":
             {                
                 "min_score"      : 0.05
             }
         },
         {
-            "substep_name":"2_compare_eval.ipynb",
+            "substep_name":"compare_eval.ipynb",
             "substep_params":
             {
                 "threshold_iou" : 0.5
