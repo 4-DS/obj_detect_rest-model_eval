@@ -18,14 +18,14 @@
             }
         },
         {
-            "substep_name":"eval.ipynb",
+            "substep_name":"get_predict_data.ipynb",
             "substep_params":
             {                
                 "min_score"      : 0.05
             }
         },
         {
-            "substep_name":"compare_eval.ipynb",
+            "substep_name":"eval.ipynb",
             "substep_params":
             {
                 "threshold_iou" : 0.5,
