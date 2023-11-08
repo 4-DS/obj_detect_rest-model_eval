@@ -21,7 +21,7 @@
             "substep_name":"get_predict_data.ipynb",
             "substep_params":
             {                
-                "min_score"      : 0.05
+                "min_score"      : 0.1
             }
         },
         {
@@ -29,7 +29,7 @@
             "substep_params":
             {
                 "threshold_iou" : 0.5,
-                "threshold_MAp05": 0.5
+                "threshold_MAp05": 0.02
             }
         }
     ]
