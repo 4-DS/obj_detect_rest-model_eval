@@ -29,7 +29,7 @@
             "substep_params":
             {
                 "threshold_iou" : 0.5,
-                "threshold_MAp05": 0.02
+                "threshold_MAp05": 0.008
             }
         }
     ]
