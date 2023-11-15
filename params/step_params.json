@@ -12,13 +12,7 @@
     "substeps_params":
     [
         {
-            "substep_name":"configure_eval.ipynb",
-            "substep_params":
-            {
-            }
-        },
-        {
-            "substep_name":"get_predict_data.ipynb",
+            "substep_name":"create_data_for_eval.ipynb",
             "substep_params":
             {                
                 "min_score"      : 0.1
