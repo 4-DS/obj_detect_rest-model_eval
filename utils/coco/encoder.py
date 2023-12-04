@@ -22,3 +22,6 @@ def load(coco_file):
 def dump(file, coco_data):
     with open(file, 'w') as io:
         json.dump(coco_data, io, cls=NumpyEncoder)
+
+def encode_dict_to_numpy(_in_dict):
+    return json.loads(json.dumps(_in_dict, cls=NumpyEncoder))

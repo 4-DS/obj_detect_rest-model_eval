@@ -16,7 +16,55 @@ except:
 logger = logging.getLogger(__name__)
 
 class Curves(ExtraEval):
+    '''
+    Function for building Precision-Recall Curve
+    '''
+    
+    def category_id_to_name(self, category_id):
+        return self.cocoGt.cats[category_id + 1]['name']
+    
+    @staticmethod
+    def calc_auc(recall_list, precision_list):
+        mrec = recall_list
+        mpre = precision_list
+
+        for i in range(mpre.size - 1, 0, -1):
+            mpre[i - 1] = np.maximum(mpre[i - 1], mpre[i])
+
+        i = np.where(mrec[1:] != mrec[:-1])[0]
+        return np.sum((mrec[i + 1] - mrec[i]) * mpre[i + 1])
+
     def build_curve(self, label):
+        curve = []
+
+        if self.useCats:
+            cat_ids = list(range(self.eval['precision'].shape[2]))
+        else:
+            cat_ids = [0]
+
+        for category_id in cat_ids:
+            _label = f"{self.category_id_to_name(category_id)} "
+            if len(cat_ids) == 1:
+                _label = ""
+
+            precision_list = self.eval['precision'][:,
+                                                    :, category_id, :, :].ravel()
+            recall_list = self.recThrs
+            scores = self.eval['scores'][:, :, category_id, :, :].ravel()
+            auc = round(self.calc_auc(recall_list, precision_list), 4)
+
+            curve.append(dict(
+                recall_list=recall_list,
+                precision_list=precision_list,
+                name=f'{_label}auc: {auc:.3f}',
+                scores=scores,
+                auc=auc,
+                category_id=category_id,
+            ))
+
+        return curve
+
+    def build_curve_old(self, label):
         curve = []
 
         if self.useCats:
