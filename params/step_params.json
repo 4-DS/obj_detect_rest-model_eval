@@ -12,14 +12,14 @@
     "substeps_params":
     [
         {
-            "substep_name":"inference_detector.ipynb",
+            "substep_name":"run_obj_detector.ipynb",
             "substep_params":
             {                
                 "min_score"      : 0.1
             }
         },
         {
-            "substep_name":"eval.ipynb",
+            "substep_name":"eval_obj_detector.ipynb",
             "substep_params":
             {
                 "threshold_iou" : 0.5,

@@ -1,6 +1,6 @@
 import numpy as np
 
-def transform_detection_results_to_coco(result, image, img, min_score: float = 0) -> dict:
+def convert_inference_results_to_coco(result, image, img, min_score: float = 0) -> dict:
     selected_classes = []
     selected_boxes = []
     selected_scores = []
