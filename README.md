@@ -1,10 +1,7 @@
 # Step CV-Pipeline: model_eval
 
-Task:
-- Processing the test dataset.
-
 This step CV-Pipeline: model_eval is intended for:
-Testing the model, building metrics and graphs. If this is an improvement stage, then pull up the previous predictors and plot them on a graph (so that you have something to compare with). There can be several test sets - be sure to indicate what kind of test split is in the parameters. For detectors, the construction of a Precision-Recall curve is mandatory (code). Metrics should be described as being counted. For classification: visualization of several examples with the greatest error, sorted in descending order of error. For detectors it is mandatory: FP - red, FN - blue, GT - green. Add viewing parameters to the parameters (number of examples, type of error, etc.).
+This stage of the CV Pipeline Model_Eval ensures model testing, performance evaluation, saving predictions for further analysis, and visualizing results using metrics and graphs.
 
 Input data for step CV-Pipeline: model_eval
 - **coco_test_dataset**     
