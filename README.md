@@ -1,4 +1,4 @@
-# Step CV-Pipeline: model_eval [RU](README_RU.md)
+# Step CV-Pipeline: model_eval
 
 Task:
 - Processing the test dataset.
