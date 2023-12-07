@@ -1,5 +1,3 @@
-![interface model_eval_interface.drawio](./imgs/model_eval_interface.drawio.png)
-
 # Step CV-Pipeline: model_eval [EN](README.md)
 
 Задача:
