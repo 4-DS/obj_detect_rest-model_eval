@@ -25,14 +25,14 @@ bento_service, packaged model service via BentoML (from CV-Pipeline component: m
 
 ### Create a directory for the project (or use an existing one)
 ```
-mkdir yolox_mmdet
-cd yolox_mmdet
+mkdir obj_detect_binary
+cd obj_detect_binary
 ```  
 
 ### clone the repository: model_eval
 ```
-git clone --recurse-submodules https://gitlab.com/yolox_mmdet/model_eval.git {dir name for model_eval}
-cd model_eval
+git clone --recurse-submodules https://github.com/4-DS/obj_detect_binary-model_eval.git {dir_for_model_eval}
+cd {dir_for_model_eval}
 ```  
 
 ### run step CV-Pipeline:model_eval
