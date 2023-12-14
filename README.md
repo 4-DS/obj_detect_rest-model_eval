@@ -13,13 +13,13 @@ bento_service, packaged model service via BentoML (from CV-Pipeline component: m
 
 ### Create a directory for the project (or use an existing one)
 ```
-mkdir obj_detect_binary
-cd obj_detect_binary
-```  
+mkdir -p obj_detect_rest
+cd obj_detect_rest
+```
 
 ### clone the repository: model_eval
 ```
-git clone --recurse-submodules https://github.com/4-DS/obj_detect_binary-model_eval.git {dir_for_model_eval}
+git clone --recurse-submodules https://github.com/4-DS/obj_detect_rest-model_eval.git {dir_for_model_eval}
 cd {dir_for_model_eval}
 ```  
 
